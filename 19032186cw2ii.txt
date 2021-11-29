@@ -1,0 +1,242 @@
+#!/bin/bash
+
+if [ $# != 2 ]
+   then
+	echo " Errorrrrr!!!!! Please enter only two parameters."
+	exit
+fi
+
+#Creating a function
+counting()      #Here, Counting function is defined for the use of checking the count of secretKey Error.
+
+{
+   count=1 #count variable is intialized with 1 value for counting the secretKey errors.
+
+	while [[ $count -lt 6 ]]
+	do
+		echo -e "Please, Enter secret key:"
+		read secretkey
+
+      if [[  $secretkey == 100 ]]
+		then
+			break
+		fi
+
+		if [ ! $count = 5 ]   #checking for the count values has either exceeded 4 or not.
+		then
+         echo "You entered the wrong key."
+      else
+         echo "You have Already Entered Incorrect key Five Times."    #displaying error message after user inputs wrong key for tfour times.
+			exit
+		 fi
+      ((count++))  #incrementing the value of count
+	done
+}
+counting   #calling function
+
+display(){
+	if [ $# != 2 ]
+	then
+		echo -e "Errorrr!! Please enter two parameters.\n"
+		exit
+	else
+		if ! [[ $2 =~ ^[0-9]+$ ]]
+		then
+			echo "Error!!! ID must be in integer."
+			exit
+
+		elif [[ $1 =~ ^[0-9]+$ ]]
+		then
+			echo "Name should be in string."
+			exit
+		else
+			echo "******Welcome in the Program*******"
+			echo -e " Name: $1"
+			echo -e " ID: $2 "
+			echo -e " Execution date: \c" 
+         date 
+         echo ""
+		fi
+	fi
+}
+display $1 $2  #calling function
+
+while [ 1 ]
+do
+
+   #creating function
+   country_Info()    #Defining the country function for displaying the best football team
+   {
+         echo -e "Here are the list of five codes and name of the country football team."
+         echo -e "------------------------"
+         echo -e " Country    \t | Code"
+         echo -e "------------------------"
+         echo -e " Brazil     \t | BRZ"
+         echo -e " Argentina  \t | ARG"
+         echo -e " Nepal      \t | NEP"
+         echo -e " China      \t | CHI"
+         echo -e " England    \t | ENG"
+         echo -e "------------------------"
+         echo -e " Exit       \t | exit"
+         echo -e "------------------------"
+
+         while [ 1 ]
+         do
+            echo -e "Please choose one of the best football team among all the five different team. \n"
+            echo "Enter the country code: "
+
+            read countryCode
+            echo
+            country=( $countryCode ) #creating an array
+
+            if [ ${#country[@]} = 0 ] #checking an empty argument
+               then
+                  echo -e " Please !! Don't leave it empty.."
+            fi
+
+            if [ ${#country[@]} -ne 1 ]
+            then
+               echo -e "Enter from those possibilities."
+               continue
+            fi
+
+            if [ $countryCode = "BRZ" ] || [ $countryCode = "ARG" ] || [ $countryCode = "CHI" ] || [ $countryCode = "ENG" ]
+            then
+               echo "This is not the best team!!! Please try again: "
+               continue
+            fi
+
+            if [ $countryCode = "NEP" ]
+            then
+               echo -e " Nepal football team represents nepal in football. \n"
+               echo -e " Nepal's home stadium is Dashrath football ground in Kathmandu."
+               break
+            fi
+
+            echo -e "Errorr!!!!Please enter the valid code."
+            continue
+         done
+   }
+
+
+
+   #creating a function
+   playersName()
+   {            #Defining the playersName Function to work with choosing three players.
+         code=("LM NJ KC ZZ HK")
+         echo -e "------------------------------------"
+         echo -e "The following are the list of five players with their code. \n"
+         echo -e "| Players Name     \t | Players Code |"     #Displaying codes of each players for the user.
+         echo -e "--------------------------------------"
+         echo -e "| Lionel Messi     \t | LM  |"
+         echo -e "| Neymar Junior    \t | NJ  |"
+         echo -e "| Kiran Chemjong   \t | KC  |"
+         echo -e "| Zheng Zhi        \t | ZZ  |"
+         echo -e "| Harry Kane       \t | HK  |"
+         echo -e "--------------------------------------"
+
+         while [ 1 ]
+         do
+            echo -e "Please Insert the players code : "
+            read  player1 player2 player3
+            #declaration
+            declare -a player_code=($player1 $player2 $player3)
+
+            if [[ $player3 =~ " " || -z $player1 || -z $player2 || -z $player3 ]]
+            then
+               echo -e "Please Enter three codes from above possibilities: \n"
+               continue
+            fi
+
+            if [ $player1 = $player2 ] || [ $player1 = $player3 ] || [ $player2 = $player3 ]
+            then
+               echo -e "Please try different, Player Name matched!!!  \n"   #if any condition doesn't match then, it again asks for the player codes.
+               continue
+            fi
+
+            isError=0    #ifany unwanted error occurs
+            for i in ${player_code[@]}
+            do
+               if [ $i != "LM" ] && [ $i != "NJ" ] && [ $i != "KC" ] && [ $i != "ZZ" ] && [ $i != "HK" ]
+                  then
+                        isError=1
+               fi
+            done
+
+            if [ $isError = 1 ]
+               then
+                  echo "Players with different code is added!!"
+                  continue
+            fi
+            break
+
+         done
+   }
+
+
+   #creating a function
+   read_file() {
+               document="/home/srijana/$1"
+
+               if [ -f $document ]
+               then
+                     cat $document
+               else
+                     echo " Empty file found!!!"
+               fi
+   }
+
+   #reading players file
+   Selectplayer() {
+   select player in $player1 $player2 $player3
+      do
+         case $player in LM)
+            echo " Lionel Messi"
+                     read_file LM
+                     break
+                     ;;
+            NJ)
+               echo "Neymar Junior"
+                     read_file NJ
+                     break
+                        ;;
+            KC)
+               echo "Kiran Chemjong"
+                     read_file KC
+                     break
+                        ;;
+            ZZ)
+               echo "Zheng Zhi"
+               read_file ZZ
+               break
+                 ;;
+            HK)
+               echo "Hary Kane"
+                read_file HK
+                break
+                 ;;
+         esac
+      done
+   }
+
+
+
+   #calling a function
+   country_Info
+   playersName
+   Selectplayer
+
+    while [ 1 ]
+     do
+        echo "Do you want to continue(Y/N):"
+         read y
+           if [[ $y == "yes" || $y == "YES" || $y == "Y" || $y == "y" ]]
+             then
+                break
+             elif [[ $y == "no" || $y == "NO" || $y == "N" || $y == "n" ]]
+             then
+                exit
+             fi
+       done
+done
+

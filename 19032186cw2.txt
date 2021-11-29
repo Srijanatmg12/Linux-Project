@@ -1,0 +1,403 @@
+Script started on 2021-04-09 18:54:00+05:45 [TERM="xterm-256color" TTY="/dev/tty1" COLUMNS="120" LINES="30"] COLUMNS="120" LINES="30"]
+srijana@DESKTOP-9K1K7LU:~$ export PS1="\`pwd\`$"
+/home/srijana$mkdir -p NBA/{Lakers,Miami,'Chicago Bulls','Brooklyn nets','Dallas Maveric'}
+/home/srijana$ tree NBA
+NBA
+├── Brooklyn nets
+├── Chicago Bulls
+├── Dallas Maveric
+├── Lakers
+└── Miami
+
+5 directories, 0 files
+/home/srijana$ cd NBA/Miami
+/home/srijana/NBA/Miami$ pwd
+/home/srijana/NBA/Miami
+/home/srijana/NBA/Miami$ touch file1 file2
+/home/srijana/NBA/Miami$ ls
+file1  file2
+/home/srijana/NBA/Miami$ cd ..
+/home/srijana/NBA$ rm -ir Miami
+rm: descend into directory 'Miami'? yes
+rm: remove regular empty file 'Miami/file1'? yes
+rm: remove regular empty file 'Miami/file2'? yes
+rm: remove directory 'Miami'? yes
+/home/srijana/NBA$ tree
+.
+├── Brooklyn nets
+├── Chicago Bulls
+├── Dallas Maveric
+└── Lakers
+
+4 directories, 0 files
+/home/srijana/NBA$ echo -e 'Hello! I am big fan of NBA finals.\n14 < (2+2)'
+Hello! I am big fan of NBA finals.
+14 < (2+2)
+/home/srijana/NBA$ pwd
+/home/srijana/NBA
+/home/srijana/NBA$ cd Lakers
+/home/srijana/NBA/Lakers$ pwd; cd; pwd
+/home/srijana/NBA/Lakers
+/home/srijana
+/home/srijana$ echo "The group of commands are separated by semi-colon in which pwd prints the current working directory i.e. /home/srijana/NBA/Lakers, cd command-line shell directs us to the user's home directory and pwd again prints the current working directory i.e. /home/srijana."
+The group of commands are separated by semi-colon in which pwd prints the current working directory i.e. /home/srijana/NBA/Lakers, cd command-line shell directs us to the user's home directory and pwd again prints the current working directory i.e. /home/srijana.
+/home/srijana$ cd NBA/Lakers
+/home/srijana/NBA/Lakers$ pwd; cd ..; pwd; cd..;pwd
+/home/srijana/NBA/Lakers
+/home/srijana/NBA
+/home/srijana
+/home/srijana $ cd; pwd
+/home/srijana
+/home/srijana$ echo " The group of commands where pwd prints the current working directory and cd .. moves the directory one step back. As shown in output above, we moved from /home/srijana/NBA/Lakers to /home/srijana/NBA and at the end to /home/srijana. PWD command is printing the working directory."
+ The group of commands where pwd prints the current working directory and cd .. moves the directory one step back. As shown in output above, we moved from /home/srijana/NBA/Lakers to /home/srijana/NBA and at the end to /home/srijana. PWD command is printing the working directory.
+/home/srijana$ cd; pwd
+/home/srijana
+/home/srijana$ echo "In this group of command,initially the cd command directs to user's home directory and then pwd command prints the working directory i.e./home/srijana."
+In this group of command,initially the cd command directs to user's home directory and then pwd command prints the working directory i.e./home/srijana.
+/home/srijana$ ls
+19032186cw2  19032186cw2ii  c2  NBA
+/home/srijana$ echo "This command is a command-line utility for listing all directories and their contents."
+This command is a command-line utility for listing all directories and their contents.
+/home/srijana$ ls -a
+.  ..  19032186cw2  19032186cw2ii  .bash_history  .bash_logout  .bashrc  c2  .local  NBA  .profile
+/home/srijana$ echo "This command is an option of ls command which lists all the files including hidden ones."
+This command is an option of ls command which lists all the files including hidden ones.
+/home/srijana$ ls -al
+total 24
+drwxr-xr-x 1 srijana srijana 4096 Apr  9 18:54 .
+drwxr-xr-x 1 root    root    4096 Mar  5 07:11 ..
+-rw-r--r-- 1 srijana srijana 4096 Apr  9 19:13 19032186cw2
+-rw-r--r-- 1 srijana srijana 5777 Apr  9 14:40 19032186cw2ii
+-rw------- 1 srijana srijana 3301 Apr  9 18:52 .bash_history
+-rw-r--r-- 1 srijana srijana  220 Mar  5 07:11 .bash_logout
+-rw-r--r-- 1 srijana srijana 3526 Mar  5 07:11 .bashrc
+-rw-r--r-- 1 srijana srijana   19 Mar 18 21:04 c2
+drwxr-xr-x 1 srijana srijana 4096 Mar 19 07:20 .local
+drwxr-xr-x 1 srijana srijana 4096 Apr  9 18:56 NBA
+-rw-r--r-- 1 srijana srijana  807 Mar  5 07:11 .profile
+/home/srijana$ echo "This command is also an option of ls command which function is to list out all the files including hidden files with long format (showing permissions)."
+This command is also an option of ls command which function is to list out all the files including hidden files with long format (showing permissions).
+/home/srijana$ cd; pwd; cd cw2; pwd
+/home/srijana
+bash: cd: cw2: No such file or directory
+/home/srijana
+/home/srijana$ echo"In this group of command, cd takes us to the user's home directory i.e./home/srijana which is displayed by pwd command. cd cw2 command takes us inside cw2 directory but as a file or directory named cw2 isn't present, an error is seen."
+In this group of command, cd takes us to the user's home directory i.e./home/srijana which is displayed by pwd command. cd cw2 command takes us inside cw2 directory but as a file or directory named cw2 isn't present, an error is seen.
+/home/srijana$ ls -R
+.:
+19032186cw2  19032186cw2ii  c2  NBA
+
+./NBA:
+'Brooklyn nets'  'Chicago Bulls'  'Dallas Maveric'   Lakers
+
+'./NBA/Brooklyn nets':
+
+'./NBA/Chicago Bulls':
+
+'./NBA/Dallas Maveric':
+
+./NBA/Lakers:
+/home/srijana$ echo "This command lists all the directory trees including sub-directories and files of the directory. Since they(Sub-directories) doesn't contain any files, there is empty list of files as shown in above output."
+This command lists all the directory trees including sub-directories and files of the directory. Since they(Sub-directories) doesn't contain any files, there is empty list of files as shown in above output.
+/home/srijana$ cd NBA/"Chicago Bulls"
+/home/srijana/NBA/Chicago Bulls$ cat > testX
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+^Z
+[1]+  Stopped                 cat > testX
+/home/srijana/NBA/Chicago Bulls$ cat > testY
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+^Z
+[2]+  Stopped                 cat > testY
+/home/srijana/NBA/Chicago Bulls$ cat > testZ
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+^Z
+[3]+  Stopped                 cat > testZ
+/home/srijana/NBA/Chicago Bulls$ cat testX
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+/home/srijana/NBA/Chicago Bulls$ cat testY
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+/home/srijana/NBA/Chicago Bulls$ cat testZ
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+/home/srijana/NBA/Chicago Bulls$ cp {testX,testY,testZ} ../"Brooklyn nets"/
+/home/srijana/NBA/Chicago Bulls$ tree ..
+..
+├── Brooklyn nets
+│   ├── testX
+│   ├── testY
+│   └── testZ
+├── Chicago Bulls
+│   ├── testX
+│   ├── testY
+│   └── testZ
+├── Dallas Maveric
+└── Lakers
+
+4 directories, 6 files
+/home/srijana/NBA/Chicago Bulls$ cat testX testY testZ
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+/home/srijana/NBA/Chicago Bulls$ cat testX testY testZ > testResult
+/home/srijana/NBA/Chicago Bulls$ cat testResult
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+/home/srijana/NBA/Chicago Bulls$ cat test[XYZ]
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+/home/srijana/NBA/Chicago Bulls$ echo "The given command concatenates multiple files. In this command cat test[XYZ] concatenated three different files testX,testY and testZ."
+The given command concatenates multiple files. In this command cat test[XYZ] concatenated three different files testX,testY and testZ.
+/home/srijana/NBA/Chicago Bulls$ ls -l
+total 0
+-rw-r--r-- 1 srijana srijana 216 Apr  9 19:31 testResult
+-rw-r--r-- 1 srijana srijana  72 Apr  9 19:25 testX
+-rw-r--r-- 1 srijana srijana  72 Apr  9 19:26 testY
+-rw-r--r-- 1 srijana srijana  72 Apr  9 19:28 testZ
+/home/srijana/NBA/Chicago Bulls$ chmod -rwx testX
+/home/srijana/NBA/Chicago Bulls$ ls -l testX
+---------- 1 srijana srijana 72 Apr  9 19:25 testX
+/home/srijana/NBA/Chicago Bulls$ cat testX
+cat: testX: Permission denied
+/home/srijana/NBA/Chicago Bulls$ cat > testX
+bash: testX: Permission denied
+/home/srijana/NBA/Chicago Bulls$ chmod u=rw testX
+/home/srijana/NBA/Chicago Bulls$ la -l testX
+bash: la: command not found
+/home/srijana/NBA/Chicago Bulls$ ls -l testX
+-rw------- 1 srijana srijana 72 Apr  9 19:25 testX
+/home/srijana/NBA/Chicago Bulls$ cat testX
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+/home/srijana/NBA/Chicago Bulls$ cat >> testX
+Adding data in file
+^Z
+[4]+  Stopped                 cat >> testX
+/home/srijana/NBA/Chicago Bulls$ cat testX
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+Adding data in file
+/home/srijana/NBA/Chicago Bulls$ cd ..
+/home/srijana/NBA$ ls -ld 'Chicago Bulls'
+drwxr-xr-x 1 srijana srijana 4096 Apr  9 19:31 'Chicago Bulls'
+/home/srijana/NBA$ ls -ld 'Chicago Bulls'
+drwxr-xr-x 1 srijana srijana 4096 Apr  9 19:31 'Chicago Bulls'
+/home/srijana/NBA$ chmod -rwx 'Chicago Bulls'
+/home/srijana/NBA$ ls -ld 'Chicago Bulls'
+d--------- 1 srijana srijana 4096 Apr  9 19:31 'Chicago Bulls'
+/home/srijana/NBA$ cat 'Chicago Bulls'/testX
+cat: 'Chicago Bulls/testX': Permission denied
+/home/srijana/NBA$ touch 'Chicago Bulls'/dir_access
+touch: cannot touch 'Chicago Bulls/dir_access': Permission denied
+/home/srijana/NBA$ ls -l 'Chicago Bulls'
+ls: cannot open directory 'Chicago Bulls': Permission denied
+/home/srijana/NBA$ chmod u=rwx 'Chicago Bulls'
+/home/srijana/NBA$ ls -ld 'Chicago Bulls'
+drwx------ 1 srijana srijana 4096 Apr  9 19:31 'Chicago Bulls'
+/home/srijana/NBA$ cat 'Chicago Bulls'/testX
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+Adding data in file
+/home/srijana/NBA$ cat > 'Chicago Bulls'/testA
+Permission Grant Test
+^Z
+[5]+  Stopped                 cat > 'Chicago Bulls'/testA
+/home/srijana/NBA$ ls -l 'Chicago Bulls'
+total 0
+-rw-r--r-- 1 srijana srijana  22 Apr  9 19:53 testA
+-rw-r--r-- 1 srijana srijana 216 Apr  9 19:31 testResult
+-rw------- 1 srijana srijana  92 Apr  9 19:40 testX
+-rw-r--r-- 1 srijana srijana  72 Apr  9 19:26 testY
+-rw-r--r-- 1 srijana srijana  72 Apr  9 19:28 testZ
+/home/srijana/NBA$ cd 'Brooklyn nets'
+/home/srijana/NBA/Brooklyn nets$ grep bb testX
+aaabb Aaaaa AAAAA
+bbbcc Bbbbb BBBBB
+/home/srijana/NBA/Brooklyn nets$ echo "This command displays the line of the matched string of the text i.e. "bb" from the file testX."
+This command displays the line of the matched string of the text i.e. bbfrom the file testX.
+/home/srijana/NBA/Brooklyn nets$ grep -v bb testX
+ff-ff Ccccc CCCCC
+cccdd Ddddd DDDDD
+/home/srijana/NBA/Brooklyn nets$ echo "This command displays the contents of files that are unmatched ignoring the matched string of text i.e."bb"."
+This command displays the contents of files that are unmatched ignoring the matched string of text i.e."bb".
+/home/srijana/NBA/Brooklyn nets$ grep -n bb testX
+aaabb Aaaaa AAAAA
+/home/srijana/NBA/Brooklyn nets$ echo "This command displays the line of the matched string of text as shown in the output above."
+This command displays the line of the matched string of text as shown in the output above.
+/home/srijana/NBA/Brooklyn nets$ grep -l bb *
+testX
+testY
+testZ
+/home/srijana/NBA/Brooklyn nets$ echo "This command displays the name of file containing matched string of text."
+This command displays the name of file containing matched string of text.
+/home/srijana/NBA/Brooklyn nets$ grep -i bb *
+testX:aaabb Aaaaa AAAAA
+testX:bbbcc Bbbbb BBBBB
+testY:aaabb Aaaaa AAAAA
+testY:bbbcc Bbbbb BBBBB
+testZ:aaabb Aaaaa AAAAA
+testZ:bbbcc Bbbbb BBBBB
+home/srijana/NBA/Brooklyn nets$ echo"This command displays the line of matched string of text i.e.bb from files testX,testY,testZ ignoring case distinctions."
+This command displays the line of matched string of text i.e.bb from files testX,testY,testZ ignoring case distinctions.
+/home/srijana/NBA/Brooklyn nets$ grep -c bb *
+testX:2
+testY:2
+testZ:2
+/home/srijana/NBA/Brooklyn nets$ echo "This command counts line of matched string of text i.e bb from files testX,testY and testZ.
+This command counts line of matched string of text i.e bb from files testX,testY and testZ.
+/home/srijana/NBA/Brooklyn nets$ grep '^A' *
+/home/srijana/NBA/Brooklyn nets $ echo "This command displays line starting with letterA from files testX, testY and testZ. As there is no such line, there's no output."
+This command displays line starting with letterA from files testX, testY and testZ. As there is no such line, there's no output.
+/home/srijana/NBA/Brooklyn nets$ grep -n '^' testX
+1:aaabb Aaaaa AAAAA
+2:bbbcc Bbbbb BBBBB
+3:ff-ff Ccccc CCCCC
+4:cccdd Ddddd DDDDD
+/home/srijana/NBA/Brooklyn nets $ echo "This command displays contents of file testX starting with anyletter or character along with their line number."
+This command displays contents of file testX starting with anyletter or character along with their line number.
+/home/srijana/NBA/Brooklyn nets$ alias lsal="ls -al"
+/home/srijana/NBA/Brooklyn nets$ alias lsa="ls -a"
+/home/srijana/NBA/Brooklyn nets$ alias
+alias ls='ls --color=auto'
+alias lsal='ls -al'
+/home/srijana/NBA/Brooklyn nets$ cd
+/home/srijana$ lsa
+.  ..  19032186cw2  19032186cw2ii  .bash_history  .bash_logout  .bashrc  c2  .local  NBA  .profile
+/home/srijana$ lsal
+total 52
+drwxr-xr-x 1 srijana srijana  4096 Apr  9 18:54 .
+drwxr-xr-x 1 root    root     4096 Mar  5 07:11 ..
+-rw-r--r-- 1 srijana srijana 20480 Apr  9 20:13 19032186cw2
+-rw-r--r-- 1 srijana srijana  5777 Apr  9 14:40 19032186cw2ii
+-rw------- 1 srijana srijana  3301 Apr  9 18:52 .bash_history
+-rw-r--r-- 1 srijana srijana   220 Mar  5 07:11 .bash_logout
+-rw-r--r-- 1 srijana srijana  3526 Mar  5 07:11 .bashrc
+-rw-r--r-- 1 srijana srijana    19 Mar 18 21:04 c2
+drwxr-xr-x 1 srijana srijana  4096 Mar 19 07:20 .local
+drwxr-xr-x 1 srijana srijana  4096 Apr  9 18:56 NBA
+-rw-r--r-- 1 srijana srijana   807 Mar  5 07:11 .profile
+/home/srijana$ unalias lsal
+/home/srijana$ unalias lsa
+/home/srijana$ alias
+alias ls='ls --color=auto'
+/home/srijana$ nano .bashrc
+/home/srijana$ . .bashrc
+srijana@DESKTOP-9K1K7LU:~$ export PS1="\`pwd\` $"
+/home/srijana$ alias
+alias ls='ls --color=auto'
+/home/srijana $ alias lsa
+alias lsa='ls -a'
+/home/srijana $ alias lsal
+alias lsal='ls -al'
+/home/srijana $ lsa
+.  ..  19032186cw2  19032186cw2ii  .bash_history  .bash_logout  .bashrc  c2  .local  NBA  .profile
+/home/srijana $ lsal
+total 148
+drwxr-xr-x 1 srijana srijana   4096 Apr 10 13:45 .
+drwxr-xr-x 1 root    root      4096 Mar  5 07:11 ..
+-rw-r--r-- 1 srijana srijana 117921 Apr 10 13:45 19032186cw2
+-rw-r--r-- 1 srijana srijana   5775 Apr 10 09:15 19032186cw2ii
+-rw------- 1 srijana srijana   3699 Apr 10 13:43 .bash_history
+-rw-r--r-- 1 srijana srijana    220 Mar  5 07:11 .bash_logout
+-rw-r--r-- 1 srijana srijana   3567 Apr 10 13:45 .bashrc
+-rw-r--r-- 1 srijana srijana     19 Mar 18 21:04 c2
+drwxr-xr-x 1 srijana srijana   4096 Mar 19 07:20 .local
+drwxr-xr-x 1 srijana srijana   4096 Apr 10 13:28 NBA
+-rw-r--r-- 1 srijana srijana    807 Mar  5 07:11 .profile
+/home/srijana$ nano .bashrc
+/home/srijana$ . .bashrc
+srijana@DESKTOP-9K1K7LU:~$ export PS1="\`pwd\` $"
+/home/srijana $ noAllf
+11
+/home/srijana $ noAsubsir
+63
+/home/srijana $noAcs
+0
+/home/srijana $ fc -l
+192      alias
+193      export PS1="\`pwd\`$"
+194      nano .bashrc
+195      . .bashrc
+196      lsal
+197      exit
+198      script -a 19032186cw2
+199      noAllf
+200      . .bashrc
+201      lsa
+202      NoAsubsir
+203      alias lsal
+204      exit
+205      alias lsa
+206      export PS1="\`pwd\` $"
+207      noAcs
+/home/srijana $ fc -e- -8
+lsal
+total 180
+drwxr-xr-x 1 srijana srijana   4096 Apr 10 13:51 .
+drwxr-xr-x 1 root    root      4096 Mar  5 07:11 ..
+-rw-r--r-- 1 srijana srijana 150689 Apr 10 13:50 19032186cw2
+-rw-r--r-- 1 srijana srijana   5775 Apr 10 09:15 19032186cw2ii
+-rw------- 1 srijana srijana   3699 Apr 10 13:43 .bash_history
+-rw-r--r-- 1 srijana srijana    220 Mar  5 07:11 .bash_logout
+-rw-r--r-- 1 srijana srijana   3667 Apr 10 13:51 .bashrc
+-rw-r--r-- 1 srijana srijana     19 Mar 18 21:04 c2
+drwxr-xr-x 1 srijana srijana   4096 Mar 19 07:20 .local
+drwxr-xr-x 1 srijana srijana   4096 Apr 10 13:28 NBA
+-rw-r--r-- 1 srijana srijana    807 Mar  5 07:11 .profile
+/home/srijana $ fc -e- m
+mkdir -p NBA/{Lakers,Miami,'Chicago Bulls','Brooklyn nets','Dallas Maveric'}
+/home/srijana $ exit
+exit
+
+Script done on 2021-04-10 14:03:02+05:45 [COMMAND_EXIT_CODE="0"]
